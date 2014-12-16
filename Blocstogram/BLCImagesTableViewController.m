@@ -92,7 +92,6 @@
         
         [_images removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSMutableArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        
     }
 }
 
