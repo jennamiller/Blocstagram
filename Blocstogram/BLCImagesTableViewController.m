@@ -7,8 +7,13 @@
 //
 
 #import "BLCImagesTableViewController.h"
+#import "BLCDataSource.h"
+#import "BLCMedia.h"
+#import "BLCUser.h"
+#import "BLCComment.h"
 
 @interface BLCImagesTableViewController ()
+@property NSMutableArray *items;
 
 @end
 
@@ -18,7 +23,6 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        self.images = [NSMutableArray array];
     }
     
     return self;
@@ -27,13 +31,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    for (int i = 1; i <= 10; i++) {
-        NSString *imageName = [NSString stringWithFormat:@"%d.jpg", i];
-        UIImage *image = [UIImage imageNamed:imageName];
-        if (image) {
-            [self.images addObject:image];
-        }
-    }
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"imageCell"];
 }
@@ -44,13 +41,21 @@
 
 #pragma mark - Table view data source
 
+- (void) itemCreator {
+    if ([BLCDataSource sharedInstance].mediaItems.count != 0) {
+        NSMutableArray *items = [BLCDataSource sharedInstance].mediaItems;
+    }
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.images.count;
+    return [self items].count;
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UIImage *image = self.images[indexPath.row];
-    return (CGRectGetWidth(self.view.frame) / image.size.width) * image.size.height;
+    BLCMedia *item = [BLCDataSource sharedInstance].mediaItems[indexPath.row];
+    UIImage *image = item.image;
+    
+    return image.size.height / image.size.width * CGRectGetWidth(self.view.frame);
 }
 
 
@@ -73,8 +78,8 @@
         [cell.contentView addSubview:imageView];
     }
     
-    UIImage *image = self.images[indexPath.row];
-    imageView.image = image;
+    BLCMedia *item = [BLCDataSource sharedInstance].mediaItems[indexPath.row];
+    imageView.image = item.image;
     
     return cell;
 }
@@ -90,7 +95,7 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         
-        [_images removeObjectAtIndex:indexPath.row];
+       // [BLC sharedInstance removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSMutableArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
     }
 }

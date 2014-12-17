@@ -25,6 +25,10 @@
 		B627B5EB1A3F7E6B00F41752 /* 9 in Resources */ = {isa = PBXBuildFile; fileRef = B627B5E01A3F7E6B00F41752 /* 9 */; };
 		B627B5EC1A3F7E6B00F41752 /* 10 in Resources */ = {isa = PBXBuildFile; fileRef = B627B5E11A3F7E6B00F41752 /* 10 */; };
 		B627B5EF1A3F7F3A00F41752 /* BLCImagesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B627B5EE1A3F7F3A00F41752 /* BLCImagesTableViewController.m */; };
+		B6AE12971A40BFA400333FDA /* BLCUser.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AE12961A40BFA400333FDA /* BLCUser.m */; };
+		B6AE129A1A40C1D200333FDA /* BLCMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AE12991A40C1D200333FDA /* BLCMedia.m */; };
+		B6AE129D1A40C36A00333FDA /* BLCComment.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AE129C1A40C36A00333FDA /* BLCComment.m */; };
+		B6AE12A01A40C4AB00333FDA /* BLCDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AE129F1A40C4AB00333FDA /* BLCDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +67,14 @@
 		B627B5E11A3F7E6B00F41752 /* 10 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 10; sourceTree = "<group>"; };
 		B627B5ED1A3F7F3A00F41752 /* BLCImagesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCImagesTableViewController.h; sourceTree = "<group>"; };
 		B627B5EE1A3F7F3A00F41752 /* BLCImagesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCImagesTableViewController.m; sourceTree = "<group>"; };
+		B6AE12951A40BFA400333FDA /* BLCUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCUser.h; sourceTree = "<group>"; };
+		B6AE12961A40BFA400333FDA /* BLCUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCUser.m; sourceTree = "<group>"; };
+		B6AE12981A40C1D200333FDA /* BLCMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCMedia.h; sourceTree = "<group>"; };
+		B6AE12991A40C1D200333FDA /* BLCMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCMedia.m; sourceTree = "<group>"; };
+		B6AE129B1A40C36A00333FDA /* BLCComment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCComment.h; sourceTree = "<group>"; };
+		B6AE129C1A40C36A00333FDA /* BLCComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCComment.m; sourceTree = "<group>"; };
+		B6AE129E1A40C4AB00333FDA /* BLCDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCDataSource.h; sourceTree = "<group>"; };
+		B6AE129F1A40C4AB00333FDA /* BLCDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +123,14 @@
 				B627B5B81A3F7D4000F41752 /* ViewController.m */,
 				B627B5ED1A3F7F3A00F41752 /* BLCImagesTableViewController.h */,
 				B627B5EE1A3F7F3A00F41752 /* BLCImagesTableViewController.m */,
+				B6AE12951A40BFA400333FDA /* BLCUser.h */,
+				B6AE12961A40BFA400333FDA /* BLCUser.m */,
+				B6AE12981A40C1D200333FDA /* BLCMedia.h */,
+				B6AE12991A40C1D200333FDA /* BLCMedia.m */,
+				B6AE129B1A40C36A00333FDA /* BLCComment.h */,
+				B6AE129C1A40C36A00333FDA /* BLCComment.m */,
+				B6AE129E1A40C4AB00333FDA /* BLCDataSource.h */,
+				B6AE129F1A40C4AB00333FDA /* BLCDataSource.m */,
 				B627B5BA1A3F7D4000F41752 /* Main.storyboard */,
 				B627B5BD1A3F7D4000F41752 /* Images.xcassets */,
 				B627B5BF1A3F7D4000F41752 /* LaunchScreen.xib */,
@@ -274,8 +294,12 @@
 			files = (
 				B627B5B91A3F7D4000F41752 /* ViewController.m in Sources */,
 				B627B5B61A3F7D4000F41752 /* AppDelegate.m in Sources */,
+				B6AE129A1A40C1D200333FDA /* BLCMedia.m in Sources */,
 				B627B5B31A3F7D4000F41752 /* main.m in Sources */,
 				B627B5EF1A3F7F3A00F41752 /* BLCImagesTableViewController.m in Sources */,
+				B6AE12971A40BFA400333FDA /* BLCUser.m in Sources */,
+				B6AE12A01A40C4AB00333FDA /* BLCDataSource.m in Sources */,
+				B6AE129D1A40C36A00333FDA /* BLCComment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
