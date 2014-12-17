@@ -46,11 +46,11 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.items.count;
+    return self.mediaItems.count;
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    BLCMedia *item = [BLCDataSource sharedInstance].mediaItems[indexPath.row];
+    BLCMedia *item = self.mediaItems[indexPath.row];
     UIImage *image = item.image;
     
     return image.size.height / image.size.width * CGRectGetWidth(self.view.frame);
@@ -76,7 +76,7 @@
         [cell.contentView addSubview:imageView];
     }
     
-    BLCMedia *item = [BLCDataSource sharedInstance].mediaItems[indexPath.row];
+    BLCMedia *item = self.mediaItems[indexPath.row];
     imageView.image = item.image;
     
     return cell;
@@ -92,8 +92,9 @@
     editingStyle = UITableViewCellEditingStyleDelete;
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSMutableArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
         [self.mediaItems removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:[NSMutableArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+
     }
 }
 
