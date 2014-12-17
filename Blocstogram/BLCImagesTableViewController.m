@@ -13,7 +13,7 @@
 #import "BLCComment.h"
 
 @interface BLCImagesTableViewController ()
-@property NSMutableArray *items;
+@property NSMutableArray *mediaItems;
 
 @end
 
@@ -31,7 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    self.mediaItems = [NSMutableArray arrayWithArray:[BLCDataSource sharedInstance].mediaItems];
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"imageCell"];
 }
 
@@ -41,14 +41,12 @@
 
 #pragma mark - Table view data source
 
-- (void) itemCreator {
-    if ([BLCDataSource sharedInstance].mediaItems.count != 0) {
-        NSMutableArray *items = [BLCDataSource sharedInstance].mediaItems;
-    }
+- (NSArray*) items {
+    return [BLCDataSource sharedInstance].mediaItems;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self items].count;
+    return self.items.count;
 }
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -94,9 +92,8 @@
     editingStyle = UITableViewCellEditingStyleDelete;
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        
-       // [BLC sharedInstance removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:[NSMutableArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        [self.mediaItems removeObjectAtIndex:indexPath.row];
     }
 }
 
