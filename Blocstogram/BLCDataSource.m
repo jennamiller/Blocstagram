@@ -11,7 +11,9 @@
 #import "BLCMedia.h"
 #import "BLCComment.h"
 
-@interface BLCDataSource ()
+@interface BLCDataSource () {
+    NSMutableArray *_mediaItems;
+}
 
 @property (nonatomic, strong) NSArray *mediaItems;
 
@@ -70,11 +72,11 @@
     BLCUser *user = [[BLCUser alloc] init];
     
     user.userName = [self randomStringOfLength:arc4random_uniform(10)];
+    user.caption = [self randomStringOfLength:arc4random_uniform(20)];
     
     NSString *firstName = [self randomStringOfLength:arc4random_uniform(7)];
     NSString *lastName = [self randomStringOfLength:arc4random_uniform(12)];
     user.fullName = [NSString stringWithFormat:@"%@ %@", firstName, lastName];
-    
     return user;
 }
 
@@ -97,6 +99,11 @@
     return comment;
 }
 
+//- (NSString *) makeCaption {
+//    NSString *caption = [[NSString alloc] init];
+//    }
+
+
 - (NSString *) randomStringOfLength:(NSUInteger) len {
     NSString *alphabet = @"abcdefghijklmnopqrstuvwxyz";
     
@@ -107,5 +114,36 @@
         [s appendFormat:@"%C", c];
     }
     return [NSString stringWithString:s];
+}
+
+#pragma mark - Key/Value Observing
+
+-(NSUInteger) countOfMediaItems {
+    return self.mediaItems.count;
+}
+
+- (id) objectInMediaItemsAtIndex:(NSUInteger)index  {
+    return [self.mediaItems objectAtIndex:index];
+}
+
+- (NSArray *) mediaItemsAtIndexes:(NSIndexSet *)indexes {
+    return [self.mediaItems objectsAtIndexes:indexes];
+}
+
+- (void) insertObject:(BLCMedia *)object inMediaItemsAtIndex:(NSUInteger)index {
+    [_mediaItems insertObject:object atIndex:index];
+}
+
+- (void) removeObjectFromMediaItemsAtIndex:(NSUInteger)index {
+    [_mediaItems removeObjectAtIndex:index];
+}
+
+- (void) replaceObjectInMediaItemsAtIndex:(NSUInteger)index withObject:(id)object {
+    [_mediaItems replaceObjectAtIndex:index withObject:object];
+}
+
+- (void) deleteMediaItem:(BLCMedia *)item {
+    NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"mediaItems"];
+    [mutableArrayWithKVO removeObject:item];
 }
 @end
