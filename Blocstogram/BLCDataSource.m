@@ -17,6 +17,8 @@
 
 @property (nonatomic, strong) NSArray *mediaItems;
 
+@property (nonatomic, assign) BOOL isRefreshing;
+
 @end
 
 @implementation BLCDataSource
@@ -116,6 +118,25 @@
     return [NSString stringWithString:s];
 }
 
+- (void) requestNewItemsWithCompletionHandler:(BLCNewItemCompletionBlock)completionHandler {
+    if (self.isRefreshing == NO) {
+        self.isRefreshing = YES;
+        BLCMedia *media = [[BLCMedia alloc] init];
+        media.user = [self randomUser];
+        media.image = [UIImage imageNamed:@"10.jpg"];
+        media.caption = [randomStringOfLength:arc4random_uniform(12)];
+        
+        NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"mediaItems"];
+        [mutableArrayWithKVO insertObject:media atIndex:0];
+        
+        self.isRefreshing = NO;
+        
+        if (completionHandler) {
+            completionHandler(nil);
+        }
+    }
+}
+
 #pragma mark - Key/Value Observing
 
 -(NSUInteger) countOfMediaItems {
@@ -146,4 +167,6 @@
     NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"mediaItems"];
     [mutableArrayWithKVO removeObject:item];
 }
+
+
 @end

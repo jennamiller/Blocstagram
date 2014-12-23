@@ -21,6 +21,8 @@
 @property (nonatomic, strong) NSLayoutConstraint *usernameAndCaptionLabelHeightConstraint;
 @property (nonatomic, strong) NSLayoutConstraint *commentLabelHeightConstraint;
 
+// + (CGFloat) heightForMediaItem:(BLCMedia *)mediaItem width:(CGFloat)width;
+
 @end
 
 static UIFont *lightFont;
@@ -35,7 +37,7 @@ static NSParagraphStyle *paragraphStyle;
 + (void)load {
     lightFont = [UIFont fontWithName:@"HelveticaNeue-Thin" size:11];
     boldFont = [UIFont fontWithName:@"HelveticaNeue-Bold" size:11];
-    usernameLabelGray = [UIColor colorWithRed:0.933 green:0.933 blue:0.933 alpha:1];
+    usernameLabelGray = [UIColor colorWithRed:0.933 green:0.933 blue:0.933 alpha:1]; /*#eeeeee*/
     commentLabelGray = [UIColor colorWithRed:0.898 green:0.898 blue:0.898 alpha:1];
     linkColor = [UIColor colorWithRed:0.345 green:0.314 blue:0.427 alpha:1];
     
@@ -170,7 +172,7 @@ static NSParagraphStyle *paragraphStyle;
     [layoutCell layoutIfNeeded];
     
     return CGRectGetMaxY(layoutCell.commentLabel.frame);
-}
+    }
 
 - (void)awakeFromNib {
     // Initialization code
