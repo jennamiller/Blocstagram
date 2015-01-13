@@ -30,6 +30,8 @@
 		B6AE129A1A40C1D200333FDA /* BLCMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AE12991A40C1D200333FDA /* BLCMedia.m */; };
 		B6AE129D1A40C36A00333FDA /* BLCComment.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AE129C1A40C36A00333FDA /* BLCComment.m */; };
 		B6AE12A01A40C4AB00333FDA /* BLCDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = B6AE129F1A40C4AB00333FDA /* BLCDataSource.m */; };
+		B6B065281A65BFA400507829 /* UICKeyChainStore.m in Sources */ = {isa = PBXBuildFile; fileRef = B6B065271A65BFA400507829 /* UICKeyChainStore.m */; };
+		B6E407701A4FBC8C004AEA60 /* BLCLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B6E4076F1A4FBC8C004AEA60 /* BLCLoginViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,10 @@
 		B6AE129C1A40C36A00333FDA /* BLCComment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCComment.m; sourceTree = "<group>"; };
 		B6AE129E1A40C4AB00333FDA /* BLCDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCDataSource.h; sourceTree = "<group>"; };
 		B6AE129F1A40C4AB00333FDA /* BLCDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCDataSource.m; sourceTree = "<group>"; };
+		B6B065261A65BFA400507829 /* UICKeyChainStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UICKeyChainStore.h; sourceTree = "<group>"; };
+		B6B065271A65BFA400507829 /* UICKeyChainStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UICKeyChainStore.m; sourceTree = "<group>"; };
+		B6E4076E1A4FBC8C004AEA60 /* BLCLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLCLoginViewController.h; sourceTree = "<group>"; };
+		B6E4076F1A4FBC8C004AEA60 /* BLCLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLCLoginViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +142,10 @@
 				B6AE129C1A40C36A00333FDA /* BLCComment.m */,
 				B6AE129E1A40C4AB00333FDA /* BLCDataSource.h */,
 				B6AE129F1A40C4AB00333FDA /* BLCDataSource.m */,
+				B6E4076E1A4FBC8C004AEA60 /* BLCLoginViewController.h */,
+				B6E4076F1A4FBC8C004AEA60 /* BLCLoginViewController.m */,
+				B6B065261A65BFA400507829 /* UICKeyChainStore.h */,
+				B6B065271A65BFA400507829 /* UICKeyChainStore.m */,
 				B627B5BA1A3F7D4000F41752 /* Main.storyboard */,
 				B627B5BD1A3F7D4000F41752 /* Images.xcassets */,
 				B627B5BF1A3F7D4000F41752 /* LaunchScreen.xib */,
@@ -300,11 +310,13 @@
 				B627B5B91A3F7D4000F41752 /* ViewController.m in Sources */,
 				B627B5B61A3F7D4000F41752 /* AppDelegate.m in Sources */,
 				B613C4AA1A4229C400CF139C /* BLCMediaTableViewCell.m in Sources */,
+				B6B065281A65BFA400507829 /* UICKeyChainStore.m in Sources */,
 				B6AE129A1A40C1D200333FDA /* BLCMedia.m in Sources */,
 				B627B5B31A3F7D4000F41752 /* main.m in Sources */,
 				B627B5EF1A3F7F3A00F41752 /* BLCImagesTableViewController.m in Sources */,
 				B6AE12971A40BFA400333FDA /* BLCUser.m in Sources */,
 				B6AE12A01A40C4AB00333FDA /* BLCDataSource.m in Sources */,
+				B6E407701A4FBC8C004AEA60 /* BLCLoginViewController.m in Sources */,
 				B6AE129D1A40C36A00333FDA /* BLCComment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

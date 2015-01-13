@@ -18,4 +18,6 @@
 @property (nonatomic, strong) UIImage *profilePicture;
 @property (nonatomic, strong) NSString *caption;
 
+- (instancetype) initWithDictionary:(NSDictionary *)userDictionary;
+
 @end
